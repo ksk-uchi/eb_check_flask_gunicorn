@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'testtest'
+    return 'hogehoge'
 
 @app.route('/test')
 def hogehoge():
