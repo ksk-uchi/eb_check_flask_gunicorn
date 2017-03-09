@@ -4,24 +4,25 @@ WORKDIR    /var/app
 
 RUN        pip3 install virtualenv
 RUN        virtualenv /var/app
-RUN        /var/app/bin/pip install --cache-dir /src uwsgi
+RUN        /var/app/bin/pip install --cache-dir /src gunicorn
 
-RUN        useradd uwsgi -s /bin/false
-RUN        mkdir /var/log/uwsgi
-RUN        chown -R uwsgi:uwsgi /var/log/uwsgi
+RUN        groupadd -g 2002 gunicorn
+RUN        useradd -u 2002 -g gunicorn -M -s /bin/bash gunicorn
+RUN        mkdir -p /usr/local/gunicorn/{conf,logs}
+RUN        chown -R gunicorn.gunicorn /usr/local/gunicorn
 
 ADD . /var/app
 RUN if [ -f /var/app/requirements.txt ]; then /var/app/bin/pip install -r /var/app/requirements.txt; fi
 
-ENV        UWSGI_NUM_PROCESSES    1
-ENV        UWSGI_NUM_THREADS      15
-ENV        UWSGI_UID              uwsgi
-ENV        UWSGI_GID              uwsgi
-ENV        UWSGI_LOG_FILE         /var/log/uwsgi/uwsgi.log
+ENV        GUNICORN_NUM_WORKERS      4
+ENV        GUNICORN_BIND             0.0.0.0:8080
+ENV        GUNICORN_UID              gunicorn
+ENV        GUNICORN_GID              gunicorn
+ENV        GUNICORN_LOG_FILE         /usr/local/gunicorn/log/gunicorn.log
 
 EXPOSE     8080
 
-ADD        uwsgi-start.sh /
+ADD        gunicorn-start.sh /
 
 CMD        []
-ENTRYPOINT ["/uwsgi-start.sh"]
+ENTRYPOINT ["/gunicorn-start.sh"]
