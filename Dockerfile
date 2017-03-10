@@ -19,8 +19,8 @@ ENV        GUNICORN_NUM_WORKERS      4
 ENV        GUNICORN_BIND             0.0.0.0:8080
 ENV        GUNICORN_UID              gunicorn
 ENV        GUNICORN_GID              gunicorn
-ENV        GUNICORN_ACCESS_LOG_FILE  /usr/local/gunicorn/log/access.log
-ENV        GUNICORN_ERROR_LOG_FILE   /usr/local/gunicorn/log/error.log
+ENV        GUNICORN_ACCESS_LOG       /usr/local/gunicorn/log/access.log
+ENV        GUNICORN_ERROR_LOG        /usr/local/gunicorn/log/error.log
 
 EXPOSE     8080
 
