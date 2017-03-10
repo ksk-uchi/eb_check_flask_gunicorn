@@ -8,7 +8,7 @@ cd ****************
 
 ## Build image
 ```
-docker build -t eb_flask_sample -f .\eb_flask_sample.dockerfile .
+docker build -t eb_flask_sample .
 ```
 
 ## Run the image as container
