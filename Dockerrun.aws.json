@@ -1,7 +1,7 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name": "kskuchi/eb_check",
+    "Name": "kskuchi/eb_check_flask_gunicorn",
     "Update": "true"
   },
   "Ports": [
