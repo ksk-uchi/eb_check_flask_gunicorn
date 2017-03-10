@@ -1,14 +1,12 @@
 {
   "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "kskuchi/eb_check",
+    "Update": "true"
+  },
   "Ports": [
     {
       "ContainerPort": "8080"
-    }
-  ],
-  "Volumes": [
-    {
-      "HostDirectory": "./src",
-      "ContainerDirectory": "/var/app/src"
     }
   ],
   "Logging": "/usr/local/gunicorn/log/*.log"
