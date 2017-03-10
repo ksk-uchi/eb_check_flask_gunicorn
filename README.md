@@ -2,8 +2,8 @@
 
 ## Clone repository & cd there
 ```
-git clone [this repo]
-cd [this repo]
+git clone [THIS REPO]
+cd [THIS REPO]
 ```
 
 ## Build image
