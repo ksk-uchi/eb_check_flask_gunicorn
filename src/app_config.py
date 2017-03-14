@@ -33,4 +33,6 @@ class BaseConfig(object):
     TEMPLATES_AUTO_RELOAD: None
 
 class DevConfig(BaseConfig):
+    # If DEBUG is True then ISE will be real ISE.
+    # However if it is False then Flask can handle it on function which within app.errorhandling decorator.
     DEBUG = True
