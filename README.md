@@ -8,7 +8,7 @@ cd [THIS REPOSITORY]
 
 ## Build image
 ```
-docker build -t eb_flask_sample .
+docker build -t eb_flask_sample ./docker_files/WebApp/
 ```
 
 ## Run the image as container

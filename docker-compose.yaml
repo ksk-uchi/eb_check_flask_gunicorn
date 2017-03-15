@@ -1,0 +1,19 @@
+version: '2'
+services:
+    web:
+        restart: always
+        build:
+            context: .
+            dockerfile: ./docker_files/WebApp/Dockerfile
+        ports:
+            - 3000:8080
+        links:
+            - db:mysql_container
+        volumes:
+            - C:\Users\LM\Documents\eb_flask_sample\src:/var/app/src
+    db:
+        build:
+            context: .
+            dockerfile: ./docker_files/MySQL/Dockerfile
+        ports:
+            - 3306:3306
