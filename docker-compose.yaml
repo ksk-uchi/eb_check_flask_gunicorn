@@ -3,17 +3,19 @@ services:
     web:
         restart: always
         build:
-            context: .
-            dockerfile: ./docker_files/WebApp/Dockerfile
+            context: ./WebApp/
+            dockerfile: Dockerfile
         ports:
             - 3000:8080
         links:
             - db:mysql_container
         volumes:
-            - C:\Users\LM\Documents\eb_flask_sample\src:/var/app/src
+            - ./WebApp/src:/var/app/src
     db:
         build:
-            context: .
-            dockerfile: ./docker_files/MySQL/Dockerfile
+            context: ./MySQL/
+            dockerfile: Dockerfile
         ports:
             - 3306:3306
+        volumes:
+            - C:\Users\LM\Documents\eb_flask_sample\MySQL\mysql_conf:/etc/mysql/conf.d
