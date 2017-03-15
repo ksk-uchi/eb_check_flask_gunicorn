@@ -2,6 +2,9 @@ FROM       python:3.6.0
 
 WORKDIR    /var/app
 
+RUN        apt-get update
+RUN        apt-get install mysql-client vim vim-common
+RUN        apt-get clean
 RUN        pip3 install --cache-dir /src gunicorn
 
 RUN        groupadd -g 2002 gunicorn

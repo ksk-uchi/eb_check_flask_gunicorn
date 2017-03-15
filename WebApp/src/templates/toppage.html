@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Here is Top Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="/static/sample.js"></script>
+    </head>
+    <body>
+        <h1>{{ proper_text }}</h1>
+        <h2>{{ whois }}です！</h2>
+        {% for person in b_and_s %}
+        <p>{{ person }}</p>
+        {% endfor %}
+    </body>
+</html>
