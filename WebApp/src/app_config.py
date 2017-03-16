@@ -36,3 +36,6 @@ class DevConfig(BaseConfig):
     # If DEBUG is True then ISE will be real ISE.
     # However if it is False then Flask can handle it on function which within app.errorhandling decorator.
     DEBUG = True
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root@mysql_container/test_schema'
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
+    SQLALCHEMY_ECHO = False
