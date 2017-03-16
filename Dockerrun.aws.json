@@ -9,5 +9,5 @@
       "ContainerPort": "8080"
     }
   ],
-  "Logging": "/usr/log/app/*.log"
+  "Logging": "/var/log/app/*.log"
 }
