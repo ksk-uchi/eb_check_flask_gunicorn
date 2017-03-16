@@ -38,4 +38,4 @@ class DevConfig(BaseConfig):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root@mysql_container/test_schema'
     SQLALCHEMY_TRACK_MODIFICATIONS = True
-    SQLALCHEMY_ECHO = True
+    SQLALCHEMY_ECHO = False
