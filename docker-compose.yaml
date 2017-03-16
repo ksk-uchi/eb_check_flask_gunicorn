@@ -18,4 +18,4 @@ services:
         ports:
             - 3306:3306
         volumes:
-            - C:\Users\LM\Documents\eb_flask_sample\MySQL\mysql_conf:/etc/mysql/conf.d
+            - ./MySQL/mysql_conf:/etc/mysql/conf.d
